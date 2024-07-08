@@ -102,13 +102,14 @@ header {
 .how-it-works {
     padding: 50px 100px; /* Increase left and right padding */
     text-align: center;
-    justify-content:center;
+    
 }
 
 .how-it-works .step {
     display: flex;
     align-items: center;
     margin: 30px 0;
+    justify-content: center;
 }
 
 .how-it-works .step-content {
