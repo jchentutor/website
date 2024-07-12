@@ -355,11 +355,6 @@ footer a {
 
 @media (max-width: 768px) {
   
- 
-  
- 
-  
-  
     .how-it-works {
         padding: 50px 20px; /* Shrink left and right padding */
     }
@@ -391,5 +386,19 @@ footer a {
         grid-template-columns: repeat(2, 1fr); /* 2x2 grid layout */
         gap: 20px;
     }
+}
+
+@media (max-width: 576px){
+  .logo{
+    display:grid;
+    
+  }
+  
+  .logo-subtitle{
+    position: relative;    
+    left: 15px;
+    top: -5px;
+    font-size: .8em;
+  }
 }
 
