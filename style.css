@@ -6,6 +6,8 @@ body {
     min-width: 320px; /* Adjust this value as needed */
 }
 
+
+
 header {
     display: flex;
     justify-content: space-between;
@@ -22,7 +24,7 @@ header {
 .logo {
     display:flex;
     align-items: center;
-    
+    padding-left:10px;
 }
 
 .logo-name {
@@ -31,38 +33,51 @@ header {
     margin-right: 10px;
 }
 
+.last-name{
+    margin-left: 4px;
+
+}
+
 .logo-subtitle {
-    font-family: 'Roboto', thin ;
+    font-family: 'Nunito' ;
     font-size: 1em;
+    margin-top: 2px;
+    margin-left: -3px;
 }
 
 .header-buttons {
     display: flex;
+  padding-right: 45px;
+  
 }
 
-.client-portal, .book-trial {
+button {
     padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    color: black;
+    border: solid black 2px;
+    border-radius: 15px;
     cursor: pointer;
     margin-left: 10px;
+   background-color: rgba(0,0,0,0); 
+  font-size: .9em;
 }
 
-.client-portal {
-    background-color: #0056b3; /* Professional blue color */
+.sign-in {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: .9em;
 }
 
-.book-trial {
-    background-color: #28a745; /* Green color */
+.sign-in:hover {
+  text-decoration:underline;
 }
 
-.client-portal:hover {
-    background-color: #004494;
-}
 
-.book-trial:hover {
-    background-color: #218838;
+
+button:hover {
+    background-color: black;
+    color:white;
 }
 
 .header-hero-container {
@@ -73,7 +88,8 @@ header {
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
-    padding-top: 100px; /* Adjust for fixed header */
+    padding-top:120px;
+    padding-bottom: 150px;
 }
 
 .overlap-image-container {
@@ -92,24 +108,29 @@ header {
 
 .hero {
     text-align: center;
-    padding: 100px 20px;
+    
 }
 
 .hero h1 {
     font-size: 3em;
+  font-family: 'Permanent Marker';
+}
+
+.hero p {
+  font-size: 1.3em;
 }
 
 .how-it-works {
     padding: 50px 100px; /* Increase left and right padding */
     text-align: center;
-    
+   
 }
 
 .how-it-works .step {
     display: flex;
     align-items: center;
-    margin: 30px 0;
     justify-content: center;
+    margin: 30px 0;
 }
 
 .how-it-works .step-content {
@@ -145,19 +166,23 @@ header {
     background: #ccc;
     width: 80%; /* Does not take up the full page width */
     margin: 50px auto; /* Center the divider and add space around it */
+  border-radius: 10px;
 }
 
 
 .subjects-tutored {
-    padding: 50px 100px; /* Increase left and right padding */
+    padding: 50px 50px; /* Increase left and right padding */
     text-align: center;
     margin-bottom: 50px; /* Add more padding between sections */
 }
 
 .subjects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid layout */
-    gap: 20px;
+    display: flex;
+    justify-content:space-between;
+    padding:50px 0;
+    width: 80%;
+  margin: 0 auto;
+   
 }
 
 .subject {
@@ -198,18 +223,38 @@ header {
 }
 
 .testimonials {
-    padding: 50px 100px; /* Add more padding */
+    padding: 50px 0; /* Add more padding */
     margin-bottom: 50px; /* Add more padding between sections */
 }
+
+
 
 .testimonials h2 {
     text-align: center; /* Center the heading */
     padding-bottom: 20px; /* Add space between the testimonial heading and the slideshow */
 }
 
+blockquote:before {
+    content: "“";
+    font-size: 3em;
+    position: absolute;
+    left: 0px;
+    top: -12px;
+    color: #333;
+}
+
+blockquote:after {
+    content: "”";
+    font-size: 3em;
+    position: absolute;
+    right: 7px;
+    bottom: 50px;
+    color: #333;
+}
+
 .slideshow {
     position: relative;
-    max-width: 600px;
+    max-width: 90%;
     
     margin: 0 auto; /* Center the slideshow */
     padding-bottom: 20px; /* Add space between parts of the testimonials section */
@@ -217,21 +262,19 @@ header {
 
 .slide {
     display: none;
-    text-align: center;
+    text-align: left;
+  
+}
+
+.quote{
+  font-style:italic;
 }
 
 .slide.active {
     display: block;
 }
 
-.testimonial-bubble {
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px; /* Add more space around testimonial bubbles */
-    font-size: 1.2em; /* Increase font size for testimonials */
-}
+
 
 .slideshow-controls {
     text-align: center;
@@ -239,13 +282,7 @@ header {
 }
 
 .slideshow-controls button {
-    padding: 10px 20px;
-    background-color: #0056b3; /* More professional blue color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 10px;
+    
     font-size: 1em; /* Increase font size for buttons */
 }
 
@@ -296,20 +333,14 @@ header {
 }
 
 .contact-form button {
-    padding: 10px 20px;
-    background-color: #0056b3; /* More professional blue color */
-    color: white;
-    border: none;
-    border-radius: 5px;
+    
     cursor: pointer;
     font-size: 1.2em; /* Increase font size for button */
     display: block;
     margin: 0 auto;
 }
 
-.contact-form button:hover {
-    background-color: #004494;
-}
+
 
 footer {
     text-align: center;
@@ -361,3 +392,4 @@ footer a {
         gap: 20px;
     }
 }
+
