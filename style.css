@@ -404,6 +404,10 @@ footer a {
     top: -5px;
     font-size: .8em;
   }
+
+    .header-buttons{
+    padding-right: 35px;
+  }
   
   .hero{
     padding:0 20px;
