@@ -1,3 +1,5 @@
+
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -391,7 +393,7 @@ footer a {
 @media (max-width: 576px){
   .logo{
     display:grid;
-    
+    padding-left: 0;
   }
   
   .logo-subtitle{
@@ -400,5 +402,9 @@ footer a {
     top: -5px;
     font-size: .8em;
   }
+  
+  .header-buttons{
+    padding-right: 25px;
+  }
+  
 }
-
