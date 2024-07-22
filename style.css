@@ -186,7 +186,7 @@ button:hover {
 }
 
 .overlap-image {
-    width: 90%;
+    width: 80%;
     max-width: 1000px; /* Adjust as needed */
     display:block;
     margin:0 auto;
@@ -484,6 +484,10 @@ footer a {
   
   body{
     zoom:1;
+  }
+  
+  .overlap-image {
+    width: 90%;
   }
   
     .how-it-works {
