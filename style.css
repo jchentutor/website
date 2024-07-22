@@ -291,7 +291,7 @@ button:hover {
     height: 3px; /* Thicker line */
     background: #ccc;
     width: 80%; /* Does not take up the full page width */
-    margin: 50px auto; /* Center the divider and add space around it */
+    margin: 0 auto; /* Center the divider and add space around it */
   border-radius: 10px;
 }
 
@@ -305,7 +305,7 @@ button:hover {
 .subjects {
     display: flex;
     justify-content:space-between;
-    padding:50px 0;
+    padding-top:50px;
     width: 90%;
   margin: 0 auto;
    
@@ -322,7 +322,10 @@ button:hover {
 }
 
 .about-me {
-    padding: 50px 100px; /* Add more padding */
+   padding-top:50px;
+  padding-bottom:100px;
+  padding-left: 50px;
+  padding-right: 50px;
     background-color: #f5f5f5; /* Add background color */
     
 }
