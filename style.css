@@ -498,7 +498,10 @@ footer a {
   }
   
     .how-it-works {
-        padding: 50px 20px; /* Shrink left and right padding */
+         padding-top: 20px;
+        padding-bottom:50px;
+        padding-left: 20px;
+        padding-right:20px;
     }
     .how-it-works .step {
         flex-direction: column;
