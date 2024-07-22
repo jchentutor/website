@@ -238,7 +238,9 @@ button:hover {
 
 
 .how-it-works {
-    padding: 50px 100px; /* Increase left and right padding */
+    padding-bottom:50px;
+    padding-left: 100px;
+    padding-right:100px;
     text-align: center;
    
 }
