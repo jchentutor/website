@@ -199,6 +199,8 @@ button:hover {
     text-align: center;
     color:white;
   position:relative;
+  max-width:90%;
+  margin:0 auto;
   
 }
 .book-session{
