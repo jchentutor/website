@@ -9,6 +9,13 @@ body {
   line-height: 1.6;
 }
 
+header {
+  
+  font-size: 1em;
+  padding: 20px;
+  text-align: center;
+}
+
 
 
 main {
