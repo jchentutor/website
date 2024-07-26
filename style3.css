@@ -43,7 +43,7 @@ main {
   border: 0;
   width: 100%;
   flex: 1;
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 footer {
