@@ -27,7 +27,7 @@ main {
   align-items: center;
   height: calc(100vh - 160px); /* Adjust based on header/footer height */
   padding-top:150px;
-  
+  overflow: hidden;
 }
 
 .scheduler-container {
@@ -37,7 +37,7 @@ main {
   max-width: 800px;
   min-width: 240px;
   flex: 1;
-  overflow: hidden;
+  
 }
 
 .scheduler-iframe {
