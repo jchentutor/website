@@ -26,7 +26,9 @@ main {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 160px); /* Adjust based on header/footer height */
-  padding-top:150px;
+  position:fixed;
+  top: 75px;
+  width:100%;
 }
 
 .scheduler-container {
@@ -54,4 +56,4 @@ footer {
   width: 100%;
   bottom: 0;
   
-}
+}e
