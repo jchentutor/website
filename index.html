@@ -20,6 +20,23 @@
 
   gtag('config', 'AW-715232773');
 </script>
+    
+<!-- Event snippet for Book session conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-715232773/TLoGCLvmvcYZEIWshtUC',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 
 
     
@@ -37,7 +54,7 @@
           <button class="top" id="sign-in">Sign In</button>
             </form>
             <form action="/book-trial" target="_blank">
-            <button class="top" id="book-trial" type="submit">Free Trial</button>
+            <button class="top" id="book-trial" type="submit" onclick="gtag_report_conversion();">Free Trial</button>
             </form>
         </div>
     </header>
@@ -48,7 +65,7 @@
             <p>Private online sessions for having those "Aha!" moments</p>
 
             <form action="/book-session" target="_blank">
-                <button class="book-session" type="submit">Need math help now?</button>
+                <button class="book-session" type="submit" onclick="gtag_report_conversion();">Need math help now?</button>
             </form>
         </section>
     </div>
