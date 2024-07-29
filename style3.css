@@ -32,7 +32,7 @@ main {
 
 .scheduler-container {
   display: flex;
-  height: 620px;
+  height: 700px;
   width: 100%;
   max-width: 800px;
   min-width: 240px;
