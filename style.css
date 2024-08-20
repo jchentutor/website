@@ -159,7 +159,7 @@ button:hover {
 
 .header-hero-container::before {    
       content: "";
-      background-image: url('https://img.freepik.com/free-vector/scientific-formulas-chalkboard_23-2148490969.jpg?t=st=1721148243~exp=1721151843~hmac=2a8ff5acb8ecebf959ca7dd5cc21f5fa4a2e7eacb9eb1ea3b931f2161e497486&w=1380'); /* Add your background image here */
+      background-image: url('blackboard.jpg'); /* Add your background image here */
     background-repeat: no-repeat;
       background-size: cover;
   background-position: center; 
