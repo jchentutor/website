@@ -54,7 +54,7 @@ function gtag_report_conversion(url) {
           <button class="top" id="sign-in">Sign In</button>
             </form>
             <form action="/book-trial" target="_blank">
-            <button class="top" id="book-trial" type="submit" onclick="gtag_report_conversion();">Free Trial</button>
+            <button class="top" id="book-trial" type="submit" onclick="gtag_report_conversion(); scrollToSection('contact-form-section')">Free Trial</button>
             </form>
         </div>
     </header>
@@ -217,7 +217,7 @@ My daughter struggled with online learning in calculus. Jessy was professional a
         </div>
     </section>
 
-    <section class="contact-form-section">
+    <section class="contact-form-section" id="contact-form-section">
         <h2>Schedule a Free Trial Lesson Today!</h2>
         <form class="contact-form" action="/book-trial" netlify>
             <div class="form-group">
