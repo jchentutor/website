@@ -51,19 +51,15 @@ function scrollToSection(sectionId) {
     const header = document.querySelector('header'); // Select the header element
 
     if (section) {
-        // Hide the header by setting its opacity or display
+        // Hide the header permanently by setting its opacity or display
         header.style.transition = 'opacity 0.5s'; // Optional: smooth transition
         header.style.opacity = '0'; // Hides the header by making it transparent
         
         // Scroll smoothly to the section
         section.scrollIntoView({ behavior: 'smooth' });
-
-        // Optionally, you can show the header again after the scroll completes
-        setTimeout(() => {
-            header.style.opacity = '1'; // Show the header again after scrolling
-        }, 1000); // Delay to re-show the header after 1 second
     } else {
         console.error(`Section with id "${sectionId}" not found.`);
     }
 }
+
 
