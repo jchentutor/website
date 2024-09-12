@@ -51,12 +51,16 @@ function scrollToSection(sectionId) {
     const headerOffset = document.querySelector('header').offsetHeight; // Get the height of the fixed header
 
     if (section) {
+        // Calculate the target scroll position, considering header height
         const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+        // Scroll smoothly to the target position
         window.scrollTo({
             top: sectionPosition,
-            behavior: 'smooth' // Smooth scroll
+            behavior: 'smooth' // Enable smooth scrolling
         });
     } else {
         console.error(`Section with id "${sectionId}" not found.`);
     }
 }
+
