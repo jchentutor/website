@@ -68,7 +68,7 @@ function scrollToSection(sectionId, offset = 50) {
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-        const offset = 50; // Adjust this value as needed to set the distance above the section
+        const offset = 10; // Adjust this value as needed to set the distance above the section
         const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - offset;
 
         window.scrollTo({
