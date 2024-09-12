@@ -55,14 +55,3 @@ function scrollToSection(sectionId) {
     }
 }
 
-document.addEventListener('scroll', function() {
-  const header = document.getElementById('header');
-  const section = document.getElementById('contact-form-section');
-  const sectionTop = section.getBoundingClientRect().top;
-
-  if (sectionTop <= window.innerHeight && sectionTop >= 0) {
-    header.classList.add('hidden');
-  } else {
-    header.classList.remove('hidden');
-  }
-});
