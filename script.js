@@ -48,43 +48,17 @@ window.addEventListener('scroll', function() {
 
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
-    const gap = 100; // Set the gap you want between the top of the page and the section
+    const gap = 100; // Define the gap you want between the top of the page and the section
 
     if (section) {
-        smoothScroll(section, 2000, gap); // Pass the gap value to the smoothScroll function
-    } else {
-        console.error(`Section with id "${sectionId}" not found.`);
-    }
-}
+        // Calculate the section's position relative to the top of the page
+        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - gap;
 
-function smoothScroll(target, duration, gap = 0) {
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - gap; // Subtract the gap from target position
-    const startPosition = window.pageYOffset;
-    const startTime = performance.now();
-
-    function scrollAnimation(currentTime) {
-        const timeElapsed = currentTime - startTime;
-        const run = easeInOutQuad(timeElapsed, startPosition, targetPosition - startPosition, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) {
-            requestAnimationFrame(scrollAnimation);
-        }
-    }
-
-    function easeInOutQuad(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(scrollAnimation);
-}
-
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        // Scroll smoothly to the section with the desired gap
+        window.scrollTo({
+            top: sectionPosition,
+            behavior: 'smooth' // Enable smooth scrolling
+        });
     } else {
         console.error(`Section with id "${sectionId}" not found.`);
     }
