@@ -48,7 +48,7 @@ window.addEventListener('scroll', function() {
 
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
-    const gap = 10; // Define the gap you want between the top of the page and the section
+    const gap = 0; // Define the gap you want between the top of the page and the section
 
     if (section) {
         // Calculate the section's position relative to the top of the page
