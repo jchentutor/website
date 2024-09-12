@@ -51,7 +51,6 @@ function scrollToSection(sectionId) {
     if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
     } else {
-        console.error(Section with id "${sectionId}" not found.);
+        console.error(`Section with id "${sectionId}" not found.`);
     }
 }
-
