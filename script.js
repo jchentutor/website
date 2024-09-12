@@ -49,14 +49,20 @@ window.addEventListener('scroll', function() {
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-        const offset = 5; // Adjust this value as needed to set the distance above the section
-        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - offset;
-
-        window.scrollTo({
-            top: sectionPosition,
-            behavior: 'smooth'
-        });
+        section.scrollIntoView({ behavior: 'smooth' });
     } else {
-        console.error(`Section with id "${sectionId}" not found.`);
+        console.error(Section with id "${sectionId}" not found.);
     }
 }
+
+document.addEventListener('scroll', function() {
+  const header = document.getElementById('header');
+  const section = document.getElementById('contact-form-section');
+  const sectionTop = section.getBoundingClientRect().top;
+
+  if (sectionTop <= window.innerHeight && sectionTop >= 0) {
+    header.classList.add('hidden');
+  } else {
+    header.classList.remove('hidden');
+  }
+});
