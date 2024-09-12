@@ -68,15 +68,8 @@ function scrollToSection(sectionId, offset = 50) {
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-        const offset = 0; // Adjust this value as needed to set the distance above the section
-        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - offset;
-
-        window.scrollTo({
-            top: sectionPosition,
-            behavior: 'smooth'
-        });
+        section.scrollIntoView({ behavior: 'smooth' });
     } else {
-        console.error(`Section with id "${sectionId}" not found.`);
+        console.error(Section with id "${sectionId}" not found.);
     }
 }
-
