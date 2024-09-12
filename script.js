@@ -49,8 +49,32 @@ window.addEventListener('scroll', function() {
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        smoothScroll(section, 2000); // 2000ms = 2 seconds scroll
     } else {
         console.error(`Section with id "${sectionId}" not found.`);
     }
+}
+
+function smoothScroll(target, duration) {
+    const targetPosition = target.getBoundingClientRect().top;
+    const startPosition = window.pageYOffset;
+    const startTime = performance.now();
+
+    function scrollAnimation(currentTime) {
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, startPosition, targetPosition, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) {
+            requestAnimationFrame(scrollAnimation);
+        }
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(scrollAnimation);
 }
