@@ -46,10 +46,20 @@ window.addEventListener('scroll', function() {
   }
 });
 
-function scrollToSection(sectionId) {
+function scrollToSection(sectionId, offset = 50) {
     const section = document.getElementById(sectionId);
     if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Apply offset after the smooth scroll to create a gap
+        setTimeout(() => {
+            const scrolledY = window.scrollY;
+
+            // Adjust scroll by subtracting the desired offset
+            if (scrolledY) {
+                window.scrollBy({ top: -offset, behavior: 'smooth' });
+            }
+        }, 100); // Set a small delay for smooth scroll to finish
     } else {
         console.error(`Section with id "${sectionId}" not found.`);
     }
