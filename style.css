@@ -426,6 +426,7 @@ blockquote:after {
     background-color: #e6f7ff; /* Light blue background */
     padding: 50px 20px; /* Add more padding */
     text-align: center;
+    scroll-margin-top: 25px;
 }
 
 .contact-form {
