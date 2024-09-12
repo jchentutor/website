@@ -48,19 +48,11 @@ window.addEventListener('scroll', function() {
 
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
-    const gap = 0; // Define the gap you want between the top of the page and the section
-
     if (section) {
-        // Calculate the section's position relative to the top of the page
-        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - gap;
-
-        // Scroll smoothly to the section with the desired gap
-        window.scrollTo({
-            top: sectionPosition,
-            behavior: 'smooth' // Enable smooth scrolling
-        });
+        section.scrollIntoView({ behavior: 'smooth' });
     } else {
         console.error(`Section with id "${sectionId}" not found.`);
     }
 }
+
 
