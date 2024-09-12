@@ -48,18 +48,37 @@ window.addEventListener('scroll', function() {
 
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
-    const header = document.querySelector('header'); // Select the header element
+    const gap = 100; // Set the gap you want between the top of the page and the section
 
     if (section) {
-        // Hide the header permanently by setting its opacity or display
-        header.style.transition = 'opacity 0.5s'; // Optional: smooth transition
-        header.style.opacity = '0'; // Hides the header by making it transparent
-        
-        // Scroll smoothly to the section
-        section.scrollIntoView({ behavior: 'smooth' });
+        smoothScroll(section, 2000, gap); // Pass the gap value to the smoothScroll function
     } else {
         console.error(`Section with id "${sectionId}" not found.`);
     }
+}
+
+function smoothScroll(target, duration, gap = 0) {
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - gap; // Subtract the gap from target position
+    const startPosition = window.pageYOffset;
+    const startTime = performance.now();
+
+    function scrollAnimation(currentTime) {
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, startPosition, targetPosition - startPosition, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) {
+            requestAnimationFrame(scrollAnimation);
+        }
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(scrollAnimation);
 }
 
 
